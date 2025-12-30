@@ -17,6 +17,9 @@ jobs:
           path: 'dist/'
           retention-days: 7
   deploy:
+    permissions:
+      id-token: write
+      pages: write
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
