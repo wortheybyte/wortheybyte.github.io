@@ -1,0 +1,17 @@
+{
+  "name": "wortheybyte",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "compile": "node compile.cjs",
+    "dev": "node compile.cjs && vite",
+    "build": "node compile.cjs && tsc && vite build",
+    "preview": "node compile.cjs && vite preview"
+  },
+  "devDependencies": {
+    "pagedown": "^1.1.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  }
+}
