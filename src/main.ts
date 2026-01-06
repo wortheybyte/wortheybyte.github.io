@@ -1,4 +1,4 @@
-import homeHTML from '../compiled/home.in?raw'
+//import homeHTML from '../compiled/home.in?raw'
 import bookIcon from '/octicons/book-16.svg'
 import downloadIcon from '/octicons/download-16.svg'
 import linkExtIcon from '/octicons/link-external-16.svg'
