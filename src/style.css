@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #0d0611;
+  color: rgba(48, 33, 90, 0.87);
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,12 +19,37 @@
   border-radius: 10px;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 2em;
+}
+
+footer {
+  margin-top: auto;
+  font-style: italic;
+  padding: 2em;
+  cursor: default;
+}
+
+section {
+  margin: 3em 0em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .div__neko-container {
   position: relative;
   width: 128px;
   height: 88px;
   cursor: pointer;
   z-index: 1;
+  margin-bottom: 1em;
 }
 
 .div__purr-container {
@@ -72,9 +97,18 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.img__icon {
+  width: 2ch;
+  filter: invert(100%);
+  display: inline;
+  vertical-align: bottom;
+  padding-right: 0.5em;
 }
 
 main {
@@ -82,12 +116,25 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  max-width: 85ch;
+  min-height: 100vh;
+  min-height: 100dvh;
+  text-align: center;
 }
 
 h1 {
   font-size: 3.2rem;
   line-height: 1.1;
   cursor: default;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.1;
+  cursor: default;
+  font-style: italic;
+  color:rgb(223, 55, 105);
 }
 
 .span__brackets {
@@ -102,10 +149,10 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .game {
@@ -137,6 +184,7 @@ h1 {
   z-index: 3;
   opacity: 0;
   border-radius: 3px;
+  padding: 0.25em;
 }
 
 .game-overlay:hover {
@@ -157,10 +205,13 @@ h1 {
   font-weight: 500;
   font-size: 1.2rem;
   cursor: default;
+  color: white;
 }
 
 .game-date {
   font-style: italic;
+  color: white;
+  cursor: default;
 }
 
 .game-button-container {
@@ -177,32 +228,74 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 2px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.4em 0.6em;
   font-size: 1rem;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.905);
   cursor: pointer;
-  transition: border-color 0.25s;
+  min-height: 2.4em;
+  transition: border-color 0.1s, background-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: rgb(223, 55, 105);
+  background-color: #b2144e;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+.div__resume {
+  display: flex;
+  flex-direction: row;
+  border-radius: 1px;
+  border-radius: 10px;
+  border-color: rgb(223, 55, 105);
+  border-width: 5px;
+  border-style: dashed;
+  padding: 1em;
+}
+
+.div__resume-header {
+  padding: 1em;
+}
+
+.resume-label {
+  font-size: 1rem;
+}
+
+.div__resume-col {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-right: 10px;
+}
+
+#resume-type {
+  background-color: #1a1a1a;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.905);
+  padding: 0.4em;
+  font-size: 1rem;
+  min-height: 2.4em;
+  cursor: pointer;
+}
+#resume-type:hover {
+  border-color: rgb(223, 55, 105);
+}
+#resume-type:focus,
+#resume-type:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+#resume-type:open {
+  border: 1px solid transparent;
+  background-color: #1a1a1a;
+}
+option:checked {
+  background: #b2144e;
 }

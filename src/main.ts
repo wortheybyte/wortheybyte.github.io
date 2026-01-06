@@ -1,4 +1,7 @@
 import homeHTML from '../compiled/home.in?raw'
+import bookIcon from '/octicons/book-16.svg'
+import downloadIcon from '/octicons/download-16.svg'
+import linkExtIcon from '/octicons/link-external-16.svg'
 import './style.css'
 
 interface IGame {
@@ -64,7 +67,7 @@ function renderGame(game: IGame) {
           <div class="game-title">${game.Title}</div>
           <div class="game-date">${game.Date}</div>
           <div class="game-button-container">
-            <button class="game-button">Read More</button>
+            <button class="game-button"><img src="${bookIcon}" class="img__icon"/></img>Read More</button>
           </div>
         </div>
       </div>
@@ -83,23 +86,41 @@ function renderGames(games: IGame[]) {
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <main>
+    <header>
     <h1><span class="span__brackets">{</span>patrick<span class="span__brackets">}</span> <span class="span__last-name">worthey!</span></h1>
-    <div id="purr-container" class="div__purr-container"></div>
-    <div id="neko-container" class="div__neko-container">
-      <img id="neko-frame1" class="img__neko-show" src="neko/sleep1.png"/>
-      <img id="neko-frame2" class="img__neko-hide" src="neko/sleep2.png"/>
-    </div>
-    <p class="subtitle"><em>Data/software engineer</em>, with multiple top-selling video game title credits</p>
-    <h2>Professional Projects</h2>
+    </header>
+    <section>
+      <h2>Resume download...</h2>
+      <div class="div__resume">
+        <div class="div__resume-col">
+          <button><img src="${downloadIcon}" class="img__icon"/></img>Get Resume</button>
+        </div>
+        <div class="div__resume-col">
+          <select name="resume-type" id="resume-type">
+            <option value="pdf">.pdf</option>
+            <option value="docx">.docx</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section>
+    <h2>Games I worked on...</h2>
     ${renderGames(games)}
-    <div>
-      <h2>Resume Download</h2>
-      <button>Download</button>
-    </div>
-    <div>
-      <h2>Personal Projects</h2>
-      <button>View Personal Projects</button>
-    </div>
+    </section>
+    <section>
+      <h2>More stuff...</h2>
+      <button><img src="${linkExtIcon}" class="img__icon"/></img>View Personal Projects</button>
+    </section>
+    <section>
+      <div id="purr-container" class="div__purr-container"></div>
+      <div id="neko-container" class="div__neko-container">
+        <img id="neko-frame1" class="img__neko-show" src="neko/sleep1.png"/>
+        <img id="neko-frame2" class="img__neko-hide" src="neko/sleep2.png"/>
+      </div>
+    </section>
+    <footer>
+      No cookies. No data. Copyright &copy; 2026 Patrick Worthey, all rights reserved.
+    </footer>
   </main>
 `
 
